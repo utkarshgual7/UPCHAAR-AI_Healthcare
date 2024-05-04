@@ -1,0 +1,13 @@
+/* About.css */
+.review-carousel {
+  margin: 0px; /* Remove margin */
+  padding: 0 5px; /* Add padding */
+}
+
+.review-carousel .slick-dots {
+  bottom: 140px; /* Adjust the position of dots */
+}
+
+.review-carousel .slick-slide {
+  margin: 0 10px; /* Adjust the margin between slides */
+}
