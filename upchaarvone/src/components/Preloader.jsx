@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { getImageUrl } from "../utils.js";
 
 const quotes = [
   "Health is the greatest gift, contentment the greatest wealth, faithfulness the best relationship. — Buddha",
@@ -29,11 +30,15 @@ const Preloader = () => {
   return (
     <div className="fixed inset-0 flex flex-col items-center justify-center bg-gradient-to-b from-gray-200 to-black text-white z-50">
       {/* Brain Spinner */}
-      <div className="relative w-28 h-28 animate-spin">
-        <div className="absolute w-full h-full rounded-full border-4 border-t-teal-400 border-green-300"></div>
+      <div className="relative mb-14 w-max h-28 animate-pulse">
+        <img
+          className="w-[200px] "
+          src={getImageUrl("Home/Homelogo.png")}
+        ></img>
+        {/* <div className="absolute w-full h-full rounded-full border-4 border-t-teal-400 border-green-300"></div>
         <div className="absolute w-24 h-24 rounded-full border-4 border-t-green-300 border-orange-600 animate-spin delay-150"></div>
         <div className="absolute w-20 h-20 rounded-full border-4 border-t-green-200 border-gray-600 animate-spin delay-300"></div>
-        <div className="absolute w-16 h-16 rounded-full border-4 border-t-orange-300 border-orange-600 animate-spin delay-450"></div>
+        <div className="absolute w-16 h-16 rounded-full border-4 border-t-orange-300 border-orange-600 animate-spin delay-450"></div> */}
       </div>
 
       {/* Quote Section */}

@@ -32,13 +32,22 @@ const Working = () => {
         </div>
         <div className="w-full md:w-max mt-8 md:mt-0">
           <div className="aspect-w-16 aspect-h-9">
-            <iframe
+            {/* <iframe
               className="w-full h-full"
-              src="https://www.youtube.com/embed/qOO6lVMhmGc"
+              src="https://youtu.be/PWTHZwJvAzE"
               title="YouTube video player"
               frameBorder="1"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
+            ></iframe> */}
+            <iframe
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/PWTHZwJvAzE?si=G1puU9gED2G_3y-m"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
             ></iframe>
           </div>
         </div>
