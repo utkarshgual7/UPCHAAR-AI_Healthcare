@@ -83,7 +83,7 @@ const Navbar = () => {
         {/* Login or Logout Button */}
         {LoggedInUser ? (
           <div
-            className="flex flex-col items-center justify-center cursor-pointer rounded-lg transform transition duration-300 hover:scale-105 hover:shadow-xl"
+            className="flex flex-col items-center justify-center cursor-pointer rounded-lg transform transition duration-300 hover:scale-105"
             onClick={ScrollDownArrow}
           >
             <ChevronDownIcon className="w-14 h-14 text-white animate-bounce max-[300px]:mt-5" />
