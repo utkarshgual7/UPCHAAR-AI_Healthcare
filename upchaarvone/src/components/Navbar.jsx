@@ -58,7 +58,7 @@ const Navbar = () => {
       </div>
 
       {/* Combined Heading for Responsive Text Wrapping */}
-      <div className="absolute top-48 text-6xl font-serif px-4 md:top-56 text-center md:text-left max-md:text-5xl z-10">
+      <div className="absolute top-48 text-6xl font-serif px-4 md:top-56 text-center md:text-left max-md:text-4xl z-10">
         <h2 className="font-output tracking-wider font-semibold text-orange-500">
           Upchaar: Where <span className="italic">A.I.</span>
           <br />

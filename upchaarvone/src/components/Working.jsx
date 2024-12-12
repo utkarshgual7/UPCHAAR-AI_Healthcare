@@ -4,7 +4,7 @@ const Working = () => {
   return (
     <div className="flex flex-col items-center justify-center">
       <div className="pl-8 text-center">
-        <div className="text-5xl font-bold text-orange-500 ">
+        <div className="text-5xl font-bold text-orange-500 max-md:text-3xl">
           <span className="border-b-2 border-blue-500 font-bold ">
             How UPCHAAR Works
           </span>
