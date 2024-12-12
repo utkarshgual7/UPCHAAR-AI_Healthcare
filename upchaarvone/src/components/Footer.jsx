@@ -101,7 +101,11 @@ const Footer = () => {
           </a>{" "}
           |{" "}
           <a href="/privacy" className="hover:text-orange-400">
-            Privacy Policy
+            Privacy Policy |{" "}
+          </a>
+          <a href="https://www.flaticon.com/" title="icons attribute">
+            {" "}
+            icons by Flaticon
           </a>
         </p>
       </div>

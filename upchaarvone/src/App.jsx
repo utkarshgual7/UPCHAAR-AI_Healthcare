@@ -22,7 +22,7 @@ const App = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => setLoading(false), 5000); // Simulate loading delay
+    setTimeout(() => setLoading(false), 3000); // Simulate loading delay
   }, []);
 
   return (

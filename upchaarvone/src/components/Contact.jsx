@@ -66,7 +66,7 @@ const Contact = () => {
             {/* Google Maps */}
             <div className="mt-4">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.555431275685!2d77.3603519091438!3d28.61311088486439!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5672e20faab%3A0x14d3701f987bf606!2sStellar%20IT%20Park!5e0!3m2!1sen!2sin!4v1714408622829!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1751.3530278878827!2d77.35672604237614!3d28.608593799999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce56b7ac342e3%3A0x26f58228bc09c8d4!2sD53%2C%20Bishanpura%20Rd%2C%20Near%20Yash%20Memorial%20School%2C%20Bishanpura%2C%20Sector%2058%2C%20Noida%2C%20Uttar%20Pradesh%20201301!5e0!3m2!1sen!2sin!4v1734004273754!5m2!1sen!2sin"
                 width="100%"
                 height="250"
                 style={{ border: 0 }}
@@ -75,6 +75,7 @@ const Contact = () => {
                 title="Google Maps"
               ></iframe>
             </div>
+
             {/* Social icons */}
             <div className="flex pt-5 mt-4">
               {/* <a
@@ -111,8 +112,11 @@ const Contact = () => {
                 "linear-gradient(135deg, #E67444 0%, #FFFEFD 40%, #FFFEFD 60%, #81C46A 100%)",
             }}
           >
-            <h2 className="text-3xl font-bold text-login mb-4">
+            <h2 className="text-3xl font-bold text-login ">
               Let's Get in touch
+            </h2>
+            <h2 className="text-xl font-bold text-login ">
+              Send Review or Feedback
             </h2>
             <form className="pr-5" onSubmit={handleMessage}>
               <div className="mb-4 ">

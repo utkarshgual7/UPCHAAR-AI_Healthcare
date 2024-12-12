@@ -1,13 +1,12 @@
 import React from "react";
-
+import { motion } from "framer-motion";
 import Contact from "../components/Contact";
 import { getImageUrl } from "../utils.js";
-import ChatBot from "./ChatBot.jsx";
-// import { Img } from "../components";
+
 import BackToTop from "../components/BackToTop";
 import { useNavigate } from "react-router-dom";
 import NavbarLogin from "../components/Register/NavbarRegister.jsx";
-import { ArrowRightIcon } from "@heroicons/react/solid";
+
 import { useSelector } from "react-redux";
 import Footer from "../components/Footer.jsx";
 
@@ -31,7 +30,11 @@ const Features = () => {
         <div className="container mx-auto px-4 pt-10">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {/* Card 1 */}
-            <div
+            <motion.div
+              initial={{ opacity: 0, x: "-100%" }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: true }}
               className="p-6 bg-gradient-to-br from-orange-400 to-green-500 bg-white shadow-md rounded-lg overflow-hidden max-w-xs mb-4"
               style={{
                 background:
@@ -42,7 +45,6 @@ const Features = () => {
                 src={getImageUrl("About/chatbot.png")}
                 className="mx-auto mb-4"
               />{" "}
-              {/* Add your image source here */}
               <h2
                 className="text-lg font-semibold mb-2"
                 style={{ color: "#4A3A89" }}
@@ -62,9 +64,14 @@ const Features = () => {
                   Let's Chat -- GO
                 </button>
               )}
-            </div>
+            </motion.div>
+
             {/* Card 2 */}
-            <div
+            <motion.div
+              initial={{ opacity: 0, x: "100%" }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: true }}
               className="p-6 bg-gradient-to-br from-orange-400 to-green-500 bg-white shadow-md rounded-lg overflow-hidden max-w-xs mb-4"
               style={{
                 background:
@@ -75,7 +82,6 @@ const Features = () => {
                 src={getImageUrl("About/scan.png")}
                 className="mx-auto mb-4"
               />{" "}
-              {/* Add your image source here */}
               <h2
                 className="text-lg font-semibold mb-2"
                 style={{ color: "#4A3A89" }}
@@ -98,9 +104,14 @@ const Features = () => {
                   </button>
                 )}
               </a>
-            </div>
+            </motion.div>
+
             {/* Card 3 */}
-            <div
+            <motion.div
+              initial={{ opacity: 0, y: "50%" }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              viewport={{ once: true }}
               className="p-6 bg-gradient-to-br from-orange-400 to-green-500 bg-white shadow-md rounded-lg overflow-hidden max-w-xs mb-4"
               style={{
                 background:
@@ -108,8 +119,8 @@ const Features = () => {
               }}
             >
               <img
-                src={getImageUrl("About/doctors.png")}
-                className="mx-auto mb-4"
+                src={getImageUrl("About/x-ray.png")}
+                className="mx-auto mb-4 w-[70px] h-[70px]"
               />{" "}
               <h2 className="text-xl font-bold text-black text-center mb-4">
                 OSTEOARTHRITIS X-RAY REVIEW
@@ -129,26 +140,10 @@ const Features = () => {
                   </button>
                 )}
               </a>
-              {/* <h2
-                className="text-lg font-semibold mb-2"
-                style={{ color: "#4A3A89" }}
-              >
-                Find Doctors to consult
-              </h2>
-              <p className="text-black-600 mb-4">
-                Get a curated list of the best doctors to consult. Select an
-                appointment, pay, and connect to the doc!
-              </p>
-              <button
-                onClick={handleDoctor}
-                className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
-                style={{ backgroundColor: "#E67D41" }}
-              >
-                Book Appointment
-              </button> */}
-            </div>
+            </motion.div>
           </div>
         </div>
+
         <Contact />
         <Footer />
         <BackToTop />

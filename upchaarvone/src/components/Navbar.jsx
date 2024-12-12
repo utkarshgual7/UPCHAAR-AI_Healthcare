@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { getImageUrl } from "../utils.js";
-import { ChevronDownIcon } from "@heroicons/react/solid";
+import { ChevronDownIcon, MenuIcon, XIcon } from "@heroicons/react/solid";
 
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../redux/user/userSlice.js";
 import { useSnackbar } from "notistack";
 
 const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
   const navigateTo = useNavigate();
   const dispatch = useDispatch();
   const LoggedInUser = useSelector((state) => state.Agent.LoggedInUser);
@@ -57,7 +58,7 @@ const Navbar = () => {
       </div>
 
       {/* Combined Heading for Responsive Text Wrapping */}
-      <div className="absolute top-48 text-6xl font-serif px-4 md:top-56 text-center md:text-left max-md:text-4xl z-10">
+      <div className="absolute top-48 text-6xl font-serif px-4 md:top-56 text-center md:text-left max-md:text-5xl z-10">
         <h2 className="font-output tracking-wider font-semibold text-orange-500">
           Upchaar: Where <span className="italic">A.I.</span>
           <br />
@@ -98,8 +99,24 @@ const Navbar = () => {
         )}
       </div>
 
+      {/* Hamburger Menu Icon for Small Screens */}
+      <button
+        className="absolute top-4 right-4 md:hidden z-50"
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        {menuOpen ? (
+          <XIcon className="w-8 h-8 text-black" />
+        ) : (
+          <MenuIcon className="w-8 h-8 text-black" />
+        )}
+      </button>
+
       {/* Navigation Links */}
-      <ul className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-10 absolute top-6 md:top-10 right-5 font-sans font-bold z-10">
+      <ul
+        className={`flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-10 absolute top-6 md:top-10 right-5 font-sans font-bold z-10 rounded-lg md:rounded-none shadow-md md:shadow-none transition-all duration-300 ${
+          menuOpen ? "block" : "hidden md:flex"
+        }`}
+      >
         <li>
           <Link to="/" className="hover:bg-orange-400 p-2 rounded-md">
             HOME
@@ -109,7 +126,7 @@ const Navbar = () => {
           {LoggedInUser ? (
             <button
               onClick={handleLogout}
-              className="text-black hover:bg-orange-400 p-2 rounded-md "
+              className="text-black hover:bg-orange-400 p-2 rounded-md"
             >
               LOGOUT
             </button>
@@ -121,18 +138,14 @@ const Navbar = () => {
         </li>
         <li>
           {LoggedInUser ? (
-            <button
-              onClick={handleLogout}
-              className="text-black hover:bg-orange-400 p-2 rounded-md "
-            >
+            <Link to="/profile" className="hover:bg-orange-400 p-2 rounded-md">
               PROFILE
-            </button>
+            </Link>
           ) : (
             <button
               onClick={moveToContact}
               className="hover:bg-orange-400 p-2 rounded-md"
             >
-              {" "}
               CONTACT
             </button>
           )}
