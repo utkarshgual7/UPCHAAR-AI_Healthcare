@@ -38,13 +38,13 @@ const Navbar = () => {
   };
 
   return (
-    <div className="relative flex flex-col md:flex-row items-start md:items-center p-2 z-50">
+    <div className="relative flex flex-col items-start md:items-center p-2 z-50  md:flex-row">
       {/* Main Logo */}
       <Link to="/" className="relative z-50">
         <img
           src={getImageUrl("Navbar/logoupchaar.png")}
           alt="Logo"
-          className="w-[250px]"
+          className="w-[250px] max-md:w-[200px] max-[300px]:w-[180px] "
         />
       </Link>
 
@@ -69,12 +69,12 @@ const Navbar = () => {
       </div>
 
       {/* Buttons Container */}
-      <div className="absolute top-96 left-[20%] flex flex-row space-x-4 md:space-x-8 z-10">
+      <div className="absolute top-96 left-[20%] flex flex-row space-x-4 md:space-x-8 z-10 max-md:mt-10 max-md:left-[5%] ">
         {/* Register Button */}
         {!LoggedInUser && (
           <Link
             to="/register"
-            className="font-output tracking-wider text-base font-semibold px-6 md:px-10 py-2 md:py-3 bg-green-500 text-white rounded-full"
+            className="font-output tracking-wider text-base font-semibold px-6 md:px-10 py-2 md:py-3 bg-green-500 text-white rounded-full "
           >
             REGISTER
           </Link>
@@ -86,13 +86,13 @@ const Navbar = () => {
             className="flex flex-col items-center justify-center cursor-pointer rounded-lg transform transition duration-300 hover:scale-105 hover:shadow-xl"
             onClick={ScrollDownArrow}
           >
-            <ChevronDownIcon className="w-14 h-14 text-white animate-bounce" />
+            <ChevronDownIcon className="w-14 h-14 text-white animate-bounce max-[300px]:mt-5" />
             <p className="mt-2 text-xl font-semibold text-white">Scroll Down</p>
           </div>
         ) : (
           <Link
             to="/login"
-            className="font-output tracking-wider text-base font-bold px-8 md:px-12 py-2 md:py-3 bg-transparent text-black rounded-full border-2 border-blue-500 hover:bg-blue-500 hover:text-white"
+            className="font-output tracking-wider text-base font-bold px-8 md:px-12 py-2 md:py-3 bg-transparent text-black rounded-full border-2 border-blue-500 hover:bg-blue-500 hover:text-white "
           >
             LOGIN
           </Link>

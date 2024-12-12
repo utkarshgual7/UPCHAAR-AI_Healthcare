@@ -44,7 +44,7 @@ const Contact = () => {
         <div className="font-output tracking-wider text-2xl pl-7 max-md:text-xl">
           MAKE US BETTER
         </div>
-        <div className="font-output tracking-wider text-orange-500 font-semibold text-5xl pl-7 max-md:text-5xl">
+        <div className="font-output tracking-wider text-orange-500 font-semibold text-5xl pl-7 max-md:text-3xl">
           Suggest Us Improvements
         </div>
         <div className="flex flex-col md:flex-row mt-8 mb-4">

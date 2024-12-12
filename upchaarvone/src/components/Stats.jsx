@@ -10,7 +10,7 @@ const Stats = () => {
   return (
     <div className="flex flex-col items-center justify-center pb-14">
       <div className="pl-8 text-center">
-        <div className="text-5xl font-bold text-orange-500 ">
+        <div className="text-5xl font-bold text-orange-500 max-md:text-4xl">
           <span className="border-b-2 border-blue-500 font-bold ">
             Statistics
           </span>
@@ -25,7 +25,7 @@ const Stats = () => {
               Doctor's Onboard
             </h2>
           </div>
-          <p className="text-2xl font-bold text-gray-700 text-center">50+</p>
+          <p className="text-2xl font-bold text-gray-700 text-center">10+</p>
         </div>
         {/* Second Card */}
         <div className="bg-gray-100 shadow-md rounded-lg p-6 max-w-sm w-full md:w-auto">
@@ -35,7 +35,7 @@ const Stats = () => {
               Active Users
             </h2>
           </div>
-          <p className="text-2xl font-bold text-gray-700 text-center">1000+</p>
+          <p className="text-2xl font-bold text-gray-700 text-center">100+</p>
         </div>
         {/* Third Card */}
         <div className="bg-gray-100 shadow-md rounded-lg p-6 max-w-sm w-full md:w-auto">
@@ -45,7 +45,7 @@ const Stats = () => {
               Scans Analysed
             </h2>
           </div>
-          <p className="text-2xl font-bold text-gray-700 text-center">680+</p>
+          <p className="text-2xl font-bold text-gray-700 text-center">80+</p>
         </div>
 
         {/* <div className="bg-gray-100 shadow-md rounded-lg p-6 max-w-sm w-full md:w-auto">

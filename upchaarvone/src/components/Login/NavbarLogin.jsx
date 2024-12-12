@@ -14,7 +14,7 @@ const NavbarLogin = () => {
           <img
             src={getImageUrl("Navbar/logoupchaar.png")}
             alt="Logo"
-            className="h-auto w-[250px]"
+            className="h-auto w-[250px] max-md:w-[200px] max-[300px]:w-[180px]"
           />
         </Link>
         {/* Hamburger Menu Icon for Small Screens */}
@@ -36,17 +36,23 @@ const NavbarLogin = () => {
           }`}
         >
           <li>
-            <a href="/" className="hover:bg-orange-400 p-2 rounded-md">
+            <a href="/" className="hover:bg-orange-400 p-2 my-1  rounded-md">
               HOME
             </a>
           </li>
           <li>
-            <a href="/register" className="hover:bg-orange-400 p-2 rounded-md">
+            <a
+              href="/register"
+              className="hover:bg-orange-400 p-2 my-1  rounded-md"
+            >
               REGISTER
             </a>
           </li>
           <li>
-            <a href="#contact" className="hover:bg-orange-400 p-2 rounded-md">
+            <a
+              href="#contact"
+              className="hover:bg-orange-400 p-2 my-1 rounded-md"
+            >
               CONTACT
             </a>
           </li>

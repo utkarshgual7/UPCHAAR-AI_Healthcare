@@ -160,7 +160,7 @@ const About = () => {
       </div>
 
       {/* Trusted Section */}
-      <div className="flex justify-center items-center text-5xl font-bold text-orange-500 py-8">
+      <div className="flex justify-center items-center text-5xl  font-bold text-orange-500 py-8 max-md:text-3xl">
         <span className="border-b-2 border-blue-500 font-bold">
           We Are Trusted
         </span>
@@ -168,14 +168,14 @@ const About = () => {
       {/* Review Cards Carousel */}
       <div className="py-10">
         <Slider {...settings} className="review-carousel">
-          <div className="w-full sm:w-[80%] md:w-[60%] lg:w-[40%] bg-white shadow-md rounded-lg p-5  mb-5 mx-5">
+          <div className="w-full sm:w-[80%] md:w-[60%] lg:w-[40%] bg-white shadow-md rounded-lg p-5  mb-5">
             <p className="text-sm text-gray-700">
               "Awesome website! Nice Doctors, very friendly UI experience. I
               recommend Upchaar to my friends and family."
             </p>
             <p className="mt-4 text-xs text-gray-600">- Geeta</p>
           </div>
-          <div className="w-full sm:w-[80%] md:w-[60%] lg:w-[40%] bg-white shadow-md rounded-lg p-5  mb-5 mx-4">
+          <div className="w-full sm:w-[80%] md:w-[60%] lg:w-[40%] bg-white shadow-md rounded-lg p-5  mb-5">
             <p className="text-sm text-gray-700">
               "Dr. Varun is such a nice doctor to consult, he helped me cure my
               acne and pimples in just a few months. I will visit Upchaar
@@ -183,7 +183,14 @@ const About = () => {
             </p>
             <p className="mt-4 text-xs text-gray-600">- Vaibhav</p>
           </div>
-          <div className="w-full sm:w-[80%] md:w-[60%] lg:w-[40%] bg-white shadow-md rounded-lg p-5  mb-5 mx-4">
+          <div className="w-full sm:w-[80%] md:w-[60%] lg:w-[40%] bg-white shadow-md rounded-lg p-5  mb-5">
+            <p className="text-sm text-gray-700">
+              "The scan review feature is very easy to use. The results are very
+              accurate and helpful in diagnosing."
+            </p>
+            <p className="mt-4 text-xs text-gray-600">- Yashi</p>
+          </div>
+          <div className="w-full sm:w-[80%] md:w-[60%] lg:w-[40%] bg-white shadow-md rounded-lg p-5  mb-5">
             <p className="text-sm text-gray-700">
               "The scan review feature is very easy to use. The results are very
               accurate and helpful in diagnosing."
