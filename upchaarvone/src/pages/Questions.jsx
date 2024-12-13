@@ -16,7 +16,7 @@ const Questions = () => {
               What services does your website offer?
             </h2>
             <p>
-              Our website offers online doctor booking, Virtual Vaidya chatbot
+              Our website offers online doctor booking, Virtual Vaidhya chatbot
               consultations, and blood report AI analysis.
             </p>
           </div>
@@ -32,10 +32,10 @@ const Questions = () => {
           </div>
           <div className="question-container">
             <h2 className="font-bold text-lg pb-2">
-              Is the Virtual Vaidya chatbot available 24/7?
+              Is the Virtual Vaidhya chatbot available 24/7?
             </h2>
             <p>
-              Yes, our Virtual Vaidya chatbot is available round the clock to
+              Yes, our Virtual Vaidhya chatbot is available round the clock to
               assist you with your health queries and provide instant guidance.
             </p>
           </div>
@@ -65,7 +65,7 @@ const Questions = () => {
               Can I book an appointment with the doctor offline?
             </h2>
             <p>
-              Our website offers online doctor booking, Virtual Vaidya chatbot
+              Our website offers online doctor booking, Virtual Vaidhya chatbot
               consultations, and blood report AI analysis.
             </p>
           </div>{" "}
@@ -91,10 +91,10 @@ const Questions = () => {
           </div>
           <div className="question-container">
             <h2 className="font-bold text-lg pb-2">
-              Do I have to pay before using Virtual Vaidya?
+              Do I have to pay before using Virtual Vaidyha?
             </h2>
             <p>
-              No, Our virtual vaidya is completely free to use. Register to
+              No, Our virtual vaidhya is completely free to use. Register to
               UPCHAAR and start using.
             </p>
             <a href="/register" className="text-blue-600 hover:text-green-600">

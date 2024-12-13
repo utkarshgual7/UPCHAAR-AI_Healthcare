@@ -1,16 +1,68 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import NavbarF from "../components/NavbarF";
 import Contact from "../components/Contact";
 import NavbarLogin from "../components/Register/NavbarRegister";
+import { getImageUrl } from "../utils";
 
 function ChatBot() {
   const [question, setQuestion] = useState("");
-  const [responses, setResponses] = useState([]); // Correct state name for clarity
+  const [responses, setResponses] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [listening, setListening] = useState(false);
+  const recognition =
+    window.SpeechRecognition || window.webkitSpeechRecognition
+      ? new (window.SpeechRecognition || window.webkitSpeechRecognition)()
+      : null;
+
+  const synth = window.speechSynthesis;
+
+  useEffect(() => {
+    if (recognition) {
+      recognition.continuous = false; // Stops after a single recognition
+      recognition.interimResults = false;
+
+      recognition.onresult = (event) => {
+        const transcript =
+          event.results[event.results.length - 1][0].transcript;
+        setQuestion(transcript.trim());
+        setListening(false);
+        recognition.stop(); // Stop listening after receiving input
+      };
+
+      recognition.onerror = (event) => {
+        console.error("Recognition Error:", event.error);
+        setListening(false);
+      };
+
+      recognition.onend = () => {
+        // Triggered when recognition ends
+        setListening(false);
+      };
+    }
+  }, [recognition]);
+
+  const toggleListening = () => {
+    if (!recognition) {
+      alert("Speech recognition is not supported in this browser.");
+      return;
+    }
+
+    if (listening) {
+      recognition.stop(); // Stop listening if mic button is clicked again
+      setListening(false);
+    } else {
+      if (synth.speaking) {
+        synth.cancel(); // Stop bot's speech
+      }
+      recognition.start(); // Start listening
+      setListening(true);
+    }
+  };
 
   const handleClick = async () => {
-    if (!question.trim()) return; // Avoid empty questions
-    setLoading(true); // Show spinner
+    if (!question.trim()) return;
+
+    setLoading(true);
 
     const url = `https://virtual-vaidhya-v2.onrender.com/ask?question=${encodeURIComponent(
       question
@@ -19,17 +71,24 @@ function ChatBot() {
     try {
       const res = await fetch(url);
       const data = await res.json();
+
       // Append new response to the list
+      const botResponse = data.response;
       setResponses((prevResponses) => [
         ...prevResponses,
         { isUser: true, text: question },
-        { isUser: false, text: data.response },
+        { isUser: false, text: botResponse },
       ]);
-      setQuestion(""); // Clear the input field
+
+      // Speak bot's response
+      const utterance = new SpeechSynthesisUtterance(botResponse);
+      synth.speak(utterance);
+
+      setQuestion(""); // Clear input field
     } catch (error) {
       console.error("Error:", error);
     } finally {
-      setLoading(false); // Hide spinner
+      setLoading(false);
     }
   };
 
@@ -40,7 +99,7 @@ function ChatBot() {
   return (
     <>
       <NavbarLogin />
-      <div className="flex justify-center items-center min-h-screen ">
+      <div className="flex justify-center items-center min-h-screen">
         <div className="w-full max-w-3xl mx-auto">
           <div
             className="bg-white shadow-lg rounded-lg px-8 pt-6 pb-8"
@@ -100,7 +159,12 @@ function ChatBot() {
             </div>
 
             {/* Input Section */}
-            <div className="mt-4">
+            <div className="mt-4 relative">
+              {listening && (
+                <div className="absolute top-0 left-0 w-full bg-green-200 text-green-800 text-center py-1 rounded">
+                  Listening...
+                </div>
+              )}
               <input
                 type="text"
                 className="w-full py-2 px-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -111,12 +175,24 @@ function ChatBot() {
                   if (e.key === "Enter") handleClick();
                 }}
               />
-              <button
-                className="mt-3 w-full bg-green-400 hover:bg-orange-500 text-white font-bold py-2 px-4 rounded-lg transition-colors"
-                onClick={handleClick}
-              >
-                Ask Question
-              </button>
+              <div className="flex mt-3 space-x-2">
+                <button
+                  className="w-full bg-green-400 hover:bg-orange-500 text-white font-bold py-2 px-4 rounded-lg transition-colors"
+                  onClick={handleClick}
+                >
+                  Ask Question
+                </button>
+                <button
+                  className={`w-12 h-12 flex justify-center items-center rounded-full ${
+                    listening
+                      ? "bg-red-500 hover:bg-red-600"
+                      : " hover:bg-orange-400"
+                  }`}
+                  onClick={toggleListening}
+                >
+                  <img src={getImageUrl("Home/voice.png")} alt="Mic Icon" />
+                </button>
+              </div>
             </div>
           </div>
         </div>

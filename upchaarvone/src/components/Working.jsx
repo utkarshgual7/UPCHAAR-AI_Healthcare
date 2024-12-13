@@ -15,7 +15,7 @@ const Working = () => {
           </h2>
           <ul className="list-disc pl-6">
             <li className="text-gray-800 text-lg font-semibold mb-2">
-              Personalized Chat bot - Vaidya.
+              Personalized Chat bot - Vaidhya.
             </li>
             <li className="text-gray-800 text-lg font-semibold mb-2">
               Highly Experienced doctor.

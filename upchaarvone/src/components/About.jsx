@@ -73,7 +73,7 @@ const About = () => {
               alt="Virtual Vaidhya"
             />
             <h2 className="text-xl font-bold text-black text-center mb-4">
-              VIRTUAL VAIDYA - CHAT BOT
+              VIRTUAL VAIDHYA - CHAT BOT
             </h2>
             <p className="text-sm font-semibold font-output leading-relaxed text-orange-700 mb-4">
               The Virtual Vaidhya is a digital doctor available online. It uses
