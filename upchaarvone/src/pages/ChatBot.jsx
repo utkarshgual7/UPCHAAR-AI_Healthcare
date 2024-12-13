@@ -122,6 +122,10 @@ function ChatBot() {
                 <div className="flex justify-center items-center">
                   <div className="w-6 h-6 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
                 </div>
+              ) : responses.length === 0 ? (
+                <div className="text-center text-gray-500 italic">
+                  Ask your question. I am ready to answer your queries.
+                </div>
               ) : (
                 responses.map((message, index) => (
                   <div

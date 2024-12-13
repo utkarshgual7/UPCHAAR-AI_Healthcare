@@ -4,6 +4,8 @@ import { config } from 'dotenv';
 import path from 'path';
 import { default as authRoutes } from './src/routes/auth.route.js';
 import cors from 'cors'
+import generateSitemap from './generate-sitemap.js';
+
 
 
 config();
@@ -51,6 +53,12 @@ app.use(json()); // Allows parsing of JSON data
 
 app.use("/api/auth",authRoutes)
 
+
+// Serve sitemap.xml
+app.get('/sitemap.xml', (req, res) => {
+  res.sendFile(path.join(__dirname, 'upchaarvone', 'dist', 'sitemap.xml'));
+});
+
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'upchaarvone', 'dist', 'index.html'));
 });
@@ -72,4 +80,11 @@ app.use((err, req, res, next) => {
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}!`);
+
+  // Generate sitemap after the server starts
+  generateSitemap().then(() => {
+    console.log('Sitemap generation completed.');
+  }).catch((error) => {
+    console.error('Error generating sitemap:', error);
+  });
 });
