@@ -3,7 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 // Define base URLs of your website
-const baseUrls = ['https://www.upchaar.live/', 'http://www.upchaar.live/'];
+const baseUrls = ['https://www.upchaar.live', 'http://www.upchaar.live'];
 
 // Manually define __dirname for ES modules
 const __dirname = path.resolve();

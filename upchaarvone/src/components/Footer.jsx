@@ -64,14 +64,7 @@ const Footer = () => {
             >
               <FaFacebookF />
             </a>
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 flex items-center justify-center bg-orange-400 text-white rounded-full hover:bg-orange-500"
-            >
-              <FaTwitter />
-            </a>
+
             <a
               href="https://instagram.com"
               target="_blank"
@@ -81,7 +74,7 @@ const Footer = () => {
               <FaInstagram />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/upchaar-india/"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 flex items-center justify-center bg-orange-400 text-white rounded-full hover:bg-orange-500"
