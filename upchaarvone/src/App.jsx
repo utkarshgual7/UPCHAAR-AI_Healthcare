@@ -17,6 +17,8 @@ import ScrollToTop from "./components/ScrollToTop.jsx";
 import Preloader from "./components/Preloader.jsx";
 import About from "./components/About.jsx";
 import AboutUs from "./pages/AboutUs.jsx";
+import TermsOfService from "./components/Terms.jsx";
+import PrivacyPolicy from "./components/Privacy.jsx";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -44,6 +46,8 @@ const App = () => {
             <Route path="/faq" element={<Questions />} />
             <Route path="/virtualvaidhya" element={<ChatBot />} />
             <Route path="/aboutus" element={<AboutUs />} />
+            <Route path="/terms" element={<TermsOfService />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
 
             {/* <Route path="/applydoctor" element={<ApplyDoctor />} /> */}
             <Route path="/paymentsuccess" element={<PaymentSuccess />} />

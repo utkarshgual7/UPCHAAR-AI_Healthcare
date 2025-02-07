@@ -60,13 +60,13 @@ const Contact = () => {
             {/* <p className="text-lg font-bold text-black-800">+0120-568911</p> */}
             <p className="text-lg font-bold text-black-800">help@upchaar.com</p>
             <p className="text-lg font-bold  text-black-800">
-              UPCHAAR HQ, D-BLOCK, Sector 58
+              UPCHAAR HQ, Sector 62
               <p className="text-lg text-black-800">Noida, INDIA - 201301</p>
             </p>
             {/* Google Maps */}
             <div className="mt-4">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1751.3530278878827!2d77.35672604237614!3d28.608593799999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce56b7ac342e3%3A0x26f58228bc09c8d4!2sD53%2C%20Bishanpura%20Rd%2C%20Near%20Yash%20Memorial%20School%2C%20Bishanpura%2C%20Sector%2058%2C%20Noida%2C%20Uttar%20Pradesh%20201301!5e0!3m2!1sen!2sin!4v1734004273754!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1006.2814278207305!2d77.35962971578672!3d28.614614212891652!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5992452d761%3A0xaaa44725147c1507!2sJSS%20Academy%20of%20Technical%20Education!5e0!3m2!1sen!2sin!4v1738946586737!5m2!1sen!2sin"
                 width="100%"
                 height="250"
                 style={{ border: 0 }}

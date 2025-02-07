@@ -12,7 +12,16 @@ import Footer from "../components/Footer.jsx";
 
 const Features = () => {
   const navigateTo = useNavigate();
+  const navigate = useNavigate();
+
   const LoggedInUser = useSelector((state) => state.Agent.LoggedInUser);
+  const handleNavigation = (path) => {
+    if (LoggedInUser) {
+      navigate(path);
+    } else {
+      navigate(`/login?redirect=${encodeURIComponent(path)}`);
+    }
+  };
 
   const handleDoctor = () => {
     navigateTo("/finddoctor");
@@ -55,15 +64,12 @@ const Features = () => {
                 Get to chat with our very own AI consultant that helps you
                 figure out your disease before you reach out to the doctor.
               </p>
-              {LoggedInUser && (
-                <button
-                  onClick={handleChatBot}
-                  className="text-white px-4 py-2 rounded-lg focus:outline-none align-bottom"
-                  style={{ backgroundColor: "#E67D41" }}
-                >
-                  Let's Chat -- GO
-                </button>
-              )}
+              <button
+                onClick={() => handleNavigation("/virtualvaidhya")}
+                className="bg-blue-300 text-white font-semibold py-1 px-2 rounded-full hover:bg-blue-500 transition duration-200 flex items-center justify-center"
+              >
+                Let's Chat -- GO
+              </button>
             </motion.div>
 
             {/* Card 2 */}
@@ -95,14 +101,16 @@ const Features = () => {
                 them.
               </p>
               <a href="https://upchaar-medical-test-report.onrender.com//">
-                {LoggedInUser && (
-                  <button
-                    className=" text-white px-4 py-2 rounded-lg focus:outline-none"
-                    style={{ backgroundColor: "#E67D41" }}
-                  >
-                    UPLOAD LAB REPORT SCAN
-                  </button>
-                )}
+                <button
+                  onClick={() =>
+                    handleNavigation(
+                      "https://upchaar-osteoarthritis-x-ray-reader.onrender.com/"
+                    )
+                  }
+                  className="bg-blue-300 text-white font-semibold py-1 px-2 rounded-full hover:bg-blue-500 transition duration-200 flex items-center justify-center"
+                >
+                  UPLOAD LAB REPORT SCAN
+                </button>
               </a>
             </motion.div>
 
@@ -131,14 +139,16 @@ const Features = () => {
                 to confirm the presence of Osteoarthritis.
               </p>
               <a href="https://upchaar-osteoarthritis-x-ray-reader.onrender.com/">
-                {LoggedInUser && (
-                  <button
-                    className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:bg-blue-600"
-                    style={{ backgroundColor: "#E67D41" }}
-                  >
-                    Scan X-Ray Image
-                  </button>
-                )}
+                <button
+                  onClick={() =>
+                    handleNavigation(
+                      "https://upchaar-medical-test-report.onrender.com/"
+                    )
+                  }
+                  className="bg-blue-300 text-white font-semibold py-1 px-2 rounded-full hover:bg-blue-500 transition duration-200 flex items-center justify-center"
+                >
+                  Scan X-Ray Image
+                </button>
               </a>
             </motion.div>
           </div>

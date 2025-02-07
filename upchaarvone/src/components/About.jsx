@@ -12,6 +12,7 @@ import {
 import "./About.css";
 import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const About = () => {
   const settings = {
@@ -43,8 +44,16 @@ const About = () => {
       },
     ],
   };
+  const navigate = useNavigate();
 
   const LoggedInUser = useSelector((state) => state.Agent.LoggedInUser);
+  const handleNavigation = (path) => {
+    if (LoggedInUser) {
+      navigate(path);
+    } else {
+      navigate(`/login?redirect=${encodeURIComponent(path)}`);
+    }
+  };
 
   return (
     <>
@@ -80,13 +89,12 @@ const About = () => {
               AI to understand symptoms, offer diagnoses, and give personalized
               advice through text.
             </p>
-            <a href="/virtualvaidhya">
-              {LoggedInUser && (
-                <button className="bg-blue-300 text-white font-semibold py-1 px-2 rounded-full hover:bg-blue-500 transition duration-200 flex items-center justify-center">
-                  <ChatIcon className="w-4 h-4 mr-2" /> Start a Chat
-                </button>
-              )}
-            </a>
+            <button
+              onClick={() => handleNavigation("/virtualvaidhya")}
+              className="bg-blue-300 text-white font-semibold py-1 px-2 rounded-full hover:bg-blue-500 transition duration-200 flex items-center justify-center"
+            >
+              <ChatIcon className="w-4 h-4 mr-2" /> Start a Chat
+            </button>
           </motion.div>
 
           {/* Osteoarthritis X-Ray Review Card */}
@@ -114,13 +122,16 @@ const About = () => {
               tissues in the joint break down over time. Scan your X-Ray image
               to confirm the presence of Osteoarthritis.
             </p>
-            <a href="https://upchaar-osteoarthritis-x-ray-reader.onrender.com/">
-              {LoggedInUser && (
-                <button className="bg-blue-300 text-white font-semibold py-1 px-2 rounded-full hover:bg-blue-500 transition duration-200 flex items-center justify-center">
-                  <ArrowRightIcon className="w-4 h-4 mr-2" /> Scan X-Ray Image
-                </button>
-              )}
-            </a>
+            <button
+              onClick={() =>
+                handleNavigation(
+                  "https://upchaar-osteoarthritis-x-ray-reader.onrender.com/"
+                )
+              }
+              className="bg-blue-300 text-white font-semibold py-1 px-2 rounded-full hover:bg-blue-500 transition duration-200 flex items-center justify-center"
+            >
+              <ArrowRightIcon className="w-4 h-4 mr-2" /> Scan X-Ray Image
+            </button>
           </motion.div>
 
           {/* Scan Review Card */}
@@ -148,13 +159,16 @@ const About = () => {
               information and analyzes uploaded blood reports using artificial
               intelligence algorithms.
             </p>
-            <a href="https://upchaar-medical-test-report.onrender.com/">
-              {LoggedInUser && (
-                <button className="bg-blue-300 text-white font-semibold py-1 px-2 rounded-full hover:bg-blue-500 transition duration-200 flex items-center justify-center">
-                  <SearchIcon className="w-4 h-4 mr-2" /> Scan your report
-                </button>
-              )}
-            </a>
+            <button
+              onClick={() =>
+                handleNavigation(
+                  "https://upchaar-medical-test-report.onrender.com/"
+                )
+              }
+              className="bg-blue-300 text-white font-semibold py-1 px-2 rounded-full hover:bg-blue-500 transition duration-200 flex items-center justify-center"
+            >
+              <SearchIcon className="w-4 h-4 mr-2" /> Scan your report
+            </button>
           </motion.div>
         </div>
       </div>
