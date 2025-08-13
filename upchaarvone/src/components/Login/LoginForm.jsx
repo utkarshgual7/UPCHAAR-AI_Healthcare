@@ -33,6 +33,11 @@ const LoginForm = () => {
     navigate(redirectPath); // Redirect to the intended page
   };
 
+  const handleTestCredentials = () => {
+    setEmail("john.doe@upchaar.live");
+    setPassword("johndoe@1");
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -117,6 +122,17 @@ const LoginForm = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-blue-500"
               />
+            </div>
+
+            {/* Test Credentials Button */}
+            <div className="mb-4 flex justify-center">
+              <button
+                type="button"
+                onClick={handleTestCredentials}
+                className="bg-gray-100 text-gray-600 py-1 px-3 rounded-md font-normal hover:bg-gray-200 transition-colors duration-300 text-sm border border-gray-200 hover:border-gray-300"
+              >
+                🔑 Use Test Credentials to login
+              </button>
             </div>
 
             <button

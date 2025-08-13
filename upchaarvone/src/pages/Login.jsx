@@ -6,10 +6,11 @@ import BackToTop from "../components/BackToTop";
 
 const Login = () => {
   return (
-    <div>
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       <NavbarLogin />
-      <LoginForm />
-      <Contact />
+      <div className="pt-8 pb-16">
+        <LoginForm />
+      </div>
       <BackToTop />
     </div>
   );

@@ -7,9 +7,11 @@ import Footer from "../components/Footer";
 
 const Register = () => {
   return (
-    <div>
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
       <NavbarRegister />
-      <RegisterForm />
+      <div className="pt-8 pb-16">
+        <RegisterForm />
+      </div>
       <BackToTop />
       <Contact />
       <Footer />

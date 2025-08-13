@@ -142,122 +142,154 @@ const Register = () => {
     setSuccessMessage("");
   };
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen  p-4">
+    <div className="flex flex-col items-center justify-center min-h-screen p-4">
       <div
-        className="max-w-lg w-full bg-gradient-to-br from-orange-400 to-green-500 shadow-lg rounded-lg px-8 pt-6 pb-8"
+        className="max-w-lg w-full shadow-2xl rounded-2xl px-8 pt-8 pb-10 backdrop-blur-sm border border-white/20"
         style={{
           background:
             "linear-gradient(135deg, #E67444 0%, #FFFEFD 40%, #FFFEFD 60%, #81C46A 100%)",
         }}
       >
-        <h2 className="text-2xl font-bold text-center mb-6 text-white">
-          Fill in your details for Registration
-        </h2>
-        {errorMessage && <p className="text-red-500">{errorMessage}</p>}
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold text-white mb-2 drop-shadow-lg">
+            Create Your Account
+          </h2>
+          <p className="text-white/80 text-sm">
+            Fill in your details for registration
+          </p>
+        </div>
+        
+        {errorMessage && (
+          <div className="mb-4 p-3 bg-red-100 border border-red-300 text-red-700 rounded-lg text-sm">
+            {errorMessage}
+          </div>
+        )}
         {successMessage && (
-          <p className="text-green-600 text-bold">{successMessage}</p>
+          <div className="mb-4 p-3 bg-green-100 border border-green-300 text-green-700 rounded-lg text-sm font-medium">
+            {successMessage}
+          </div>
         )}
 
-        <form onSubmit={handleSubmit} className="grid gap-6">
-          <input
-            type="text"
-            placeholder="Full Name"
-            id="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-300"
-          />
-          <input
-            type="email"
-            placeholder="Email"
-            id="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-300"
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            id="password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-300"
-          />
+        <form onSubmit={handleSubmit} className="space-y-5">
+          <div className="space-y-4">
+            <input
+              type="text"
+              placeholder="Full Name"
+              id="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              className="w-full p-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-3 focus:ring-orange-300/50 focus:border-orange-400 transition-all duration-200 shadow-sm hover:shadow-md bg-white/90 backdrop-blur-sm"
+            />
+            <input
+              type="email"
+              placeholder="Email Address"
+              id="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              className="w-full p-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-3 focus:ring-orange-300/50 focus:border-orange-400 transition-all duration-200 shadow-sm hover:shadow-md bg-white/90 backdrop-blur-sm"
+            />
+            <input
+              type="password"
+              placeholder="Password"
+              id="password"
+              value={formData.password}
+              onChange={handleChange}
+              required
+              className="w-full p-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-3 focus:ring-orange-300/50 focus:border-orange-400 transition-all duration-200 shadow-sm hover:shadow-md bg-white/90 backdrop-blur-sm"
+            />
+          </div>
           {passwordError && (
-            <p className="text-red-500 text-center text-sm">{passwordError}</p>
+            <div className="p-3 bg-red-50 border border-red-200 text-red-600 rounded-lg text-sm">
+              {passwordError}
+            </div>
           )}
-          <div className="grid gap-2">
-            <label
-              htmlFor="phone"
-              className="text-sm text-gray-700 font-semibold"
-            >
-              Mobile Number
-            </label>
-            <input
-              type="tel"
-              id="phone"
-              placeholder="Only Indian Mobile Number"
-              maxLength={10}
-              value={formData.phone}
-              onChange={handleChange}
-              className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-300"
-            />
-          </div>
-          <div className="grid gap-2">
-            <label
-              htmlFor="dob"
-              className="text-sm text-gray-700 font-semibold"
-            >
-              Date of Birth
-            </label>
-            <input
-              type="date"
-              id="dob"
-              value={formData.dob}
-              onChange={handleChange}
-              className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-300"
-            />
-          </div>
-          <div className="grid gap-2">
-            <label
-              htmlFor="gender"
-              className="text-sm text-gray-700 font-semibold"
-            >
-              Gender
-            </label>
-            <select
-              id="gender"
-              value={formData.gender}
-              onChange={handleChange}
-              className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-300"
-            >
-              <option value="">Select Gender</option>
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
-              <option value="Transgender">Transgender</option>
-              <option value="Other">Can't specify, others</option>
-            </select>
+          
+          <div className="space-y-4">
+            <div className="space-y-2">
+              <label
+                htmlFor="phone"
+                className="text-sm text-white font-semibold drop-shadow-sm"
+              >
+                Mobile Number
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                placeholder="Enter your mobile number"
+                maxLength={10}
+                value={formData.phone}
+                onChange={handleChange}
+                className="w-full p-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-3 focus:ring-orange-300/50 focus:border-orange-400 transition-all duration-200 shadow-sm hover:shadow-md bg-white/90 backdrop-blur-sm"
+              />
+            </div>
+            
+            <div className="space-y-2">
+              <label
+                htmlFor="dob"
+                className="text-sm text-white font-semibold drop-shadow-sm"
+              >
+                Date of Birth
+              </label>
+              <input
+                type="date"
+                id="dob"
+                value={formData.dob}
+                onChange={handleChange}
+                className="w-full p-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-3 focus:ring-orange-300/50 focus:border-orange-400 transition-all duration-200 shadow-sm hover:shadow-md bg-white/90 backdrop-blur-sm"
+              />
+            </div>
+            
+            <div className="space-y-2">
+              <label
+                htmlFor="gender"
+                className="text-sm text-white font-semibold drop-shadow-sm"
+              >
+                Gender
+              </label>
+              <select
+                id="gender"
+                value={formData.gender}
+                onChange={handleChange}
+                className="w-full p-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-3 focus:ring-orange-300/50 focus:border-orange-400 transition-all duration-200 shadow-sm hover:shadow-md bg-white/90 backdrop-blur-sm"
+              >
+                <option value="">Select Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Transgender">Transgender</option>
+                <option value="Other">Prefer not to say</option>
+              </select>
+            </div>
           </div>
           <button
             type="submit"
-            className="w-full p-3 mt-2 text-white bg-blue-400 rounded hover:bg-blue-500"
+            className="w-full p-4 mt-6 text-white bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl hover:from-blue-600 hover:to-blue-700 focus:outline-none focus:ring-3 focus:ring-blue-300/50 transition-all duration-200 shadow-lg hover:shadow-xl font-semibold text-lg disabled:opacity-70 disabled:cursor-not-allowed transform hover:scale-[1.02] active:scale-[0.98]"
             disabled={loading}
           >
-            {loading ? "Registering..." : "Register"}
-          </button>
-          <div className="mt-4 text-center">
-            {successMessage && (
-              <p className="text-green-600 text-2xl text-bold">
-                {successMessage}
-              </p>
+            {loading ? (
+              <div className="flex items-center justify-center space-x-2">
+                <Spinner />
+                <span>Creating Account...</span>
+              </div>
+            ) : (
+              "Create Account"
             )}
-            <p className="text-gray-400 text-sm">
+          </button>
+          
+          <div className="mt-6 text-center">
+            {successMessage && (
+              <div className="mb-4 p-4 bg-green-50 border border-green-200 text-green-700 rounded-xl text-lg font-medium">
+                {successMessage}
+              </div>
+            )}
+            <p className="text-white/80 text-sm">
               Already have an account?{" "}
-              <Link to="/login" className="text-blue-500 hover:underline">
-                Login
+              <Link 
+                to="/login" 
+                className="text-white font-semibold hover:text-blue-200 transition-colors duration-200 underline decoration-2 underline-offset-2"
+              >
+                Sign In
               </Link>
             </p>
           </div>

@@ -61,157 +61,228 @@ const About = () => {
         className="flex justify-center items-center text-4xl font-bold text-orange-500 mt-6"
         style={{ paddingTop: "23.0rem" }}
       ></div>
-      {/* Cards - offer */}
-      <div className="container mx-auto px-4 pt-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      {/* Features Section */}
+      <div className="container mx-auto px-4 pt-16">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+            Our <span className="bg-gradient-to-r from-orange-500 to-green-500 bg-clip-text text-transparent">Features</span>
+          </h2>
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Discover how our AI-powered healthcare platform revolutionizes medical care with cutting-edge technology
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {/* Virtual Vaidhya Card */}
           <motion.div
-            initial={{ opacity: 0, x: "-100%" }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
             viewport={{ once: true }}
-            className="p-6 bg-gradient-to-br from-orange-400 to-green-500 shadow-md rounded-lg overflow-hidden max-w-xs mb-4"
-            style={{
-              background:
-                "linear-gradient(135deg, #E67444 0%, #FFFEFD 40%, #FFFEFD 60%, #81C46A 100%)",
-            }}
+            className="group card-elevated p-8 gradient-primary hover:scale-105 transition-smooth"
           >
-            <img
-              src={getImageUrl("About/virtualvaidya.png")}
-              className="mx-auto mb-4 w-[60px]"
-              alt="Virtual Vaidhya"
-            />
-            <h2 className="text-xl font-bold text-black text-center mb-4">
-              VIRTUAL VAIDHYA - CHAT BOT
-            </h2>
-            <p className="text-sm font-semibold font-output leading-relaxed text-orange-700 mb-4">
-              The Virtual Vaidhya is a digital doctor available online. It uses
-              AI to understand symptoms, offer diagnoses, and give personalized
-              advice through text.
-            </p>
-            <button
-              onClick={() => handleNavigation("/virtualvaidhya")}
-              className="bg-blue-300 text-white font-semibold py-1 px-2 rounded-full hover:bg-blue-500 transition duration-200 flex items-center justify-center"
-            >
-              <ChatIcon className="w-4 h-4 mr-2" /> Start a Chat
-            </button>
+            <div className="flex flex-col items-center text-center h-full">
+              <div className="bg-white rounded-full p-4 mb-6 shadow-medium group-hover:shadow-large transition-smooth">
+                <img
+                  src={getImageUrl("About/virtualvaidya.png")}
+                  className="w-16 h-16 object-contain"
+                  alt="Virtual Vaidhya"
+                />
+              </div>
+              
+              <h3 className="text-xl font-bold text-gray-800 mb-4 leading-tight">
+                Virtual Vaidhya
+                <span className="block text-sm font-medium text-blue-600 mt-1">AI Chat Assistant</span>
+              </h3>
+              
+              <p className="text-gray-700 leading-relaxed mb-6 flex-grow">
+                Get instant medical guidance from our AI-powered virtual doctor. Available 24/7 to understand symptoms and provide personalized health advice.
+              </p>
+              
+              <button
+                onClick={() => handleNavigation("/virtualvaidhya")}
+                className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-full transition-smooth flex items-center justify-center group-hover:shadow-lg"
+              >
+                <ChatIcon className="w-5 h-5 mr-2" />
+                Start Consultation
+              </button>
+            </div>
           </motion.div>
 
-          {/* Osteoarthritis X-Ray Review Card */}
+          {/* X-Ray Analysis Card */}
           <motion.div
-            initial={{ opacity: 0, x: "-100%" }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-orange-400 to-green-500 shadow-md rounded-lg overflow-hidden p-5 max-w-xs mb-4"
-            style={{
-              background:
-                "linear-gradient(135deg, #E67444 0%, #FFFEFD 40%, #FFFEFD 60%, #81C46A 100%)",
-            }}
+            className="group card-elevated p-8 gradient-primary hover:scale-105 transition-smooth"
           >
-            <img
-              src={getImageUrl("About/x-ray.png")}
-              className="mx-auto mb-4 w-[70px] h-[80px]"
-              alt="Experienced Doctors"
-            />
-            <h2 className="text-xl font-bold text-black text-center mb-4">
-              OSTEOARTHRITIS X-RAY REVIEW
-            </h2>
-            <p className="text-sm font-semibold font-output leading-relaxed text-orange-700 mb-4">
-              Osteoarthritis is a degenerative joint disease, in which the
-              tissues in the joint break down over time. Scan your X-Ray image
-              to confirm the presence of Osteoarthritis.
-            </p>
-            <button
-              onClick={() =>
-                handleNavigation(
-                  "https://upchaar-osteoarthritis-x-ray-reader.onrender.com/"
-                )
-              }
-              className="bg-blue-300 text-white font-semibold py-1 px-2 rounded-full hover:bg-blue-500 transition duration-200 flex items-center justify-center"
-            >
-              <ArrowRightIcon className="w-4 h-4 mr-2" /> Scan X-Ray Image
-            </button>
+            <div className="flex flex-col items-center text-center h-full">
+              <div className="bg-white rounded-full p-4 mb-6 shadow-medium group-hover:shadow-large transition-smooth">
+                <img
+                  src={getImageUrl("About/x-ray.png")}
+                  className="w-16 h-16 object-contain"
+                  alt="X-Ray Analysis"
+                />
+              </div>
+              
+              <h3 className="text-xl font-bold text-gray-800 mb-4 leading-tight">
+                X-Ray Analysis
+                <span className="block text-sm font-medium text-blue-600 mt-1">Osteoarthritis Detection</span>
+              </h3>
+              
+              <p className="text-gray-700 leading-relaxed mb-6 flex-grow">
+                Advanced AI-powered X-ray analysis for osteoarthritis detection. Get instant insights about joint health and degenerative changes.
+              </p>
+              
+              <button
+                onClick={() => {
+                  window.open("https://upchaar-osteoarthritis-x-ray-reader.onrender.com/", "_blank");
+                }}
+                className="w-full bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-full transition-smooth flex items-center justify-center group-hover:shadow-lg"
+              >
+                <ArrowRightIcon className="w-5 h-5 mr-2" />
+                Analyze X-Ray
+              </button>
+            </div>
           </motion.div>
 
-          {/* Scan Review Card */}
+          {/* Medical Report Scanner Card */}
           <motion.div
-            initial={{ opacity: 0, x: "-100%" }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-br from-orange-400 to-green-500 shadow-md rounded-lg overflow-hidden p-5 max-w-xs mb-4"
-            style={{
-              background:
-                "linear-gradient(135deg, #E67444 0%, #FFFEFD 40%, #FFFEFD 60%, #81C46A 100%)",
-            }}
+            className="group card-elevated p-8 gradient-primary hover:scale-105 transition-smooth"
           >
-            <img
-              src={getImageUrl("About/scan.png")}
-              className="mx-auto mb-4 w-[60px]"
-              alt="AI Scan Review"
-            />
-            <h2 className="text-xl font-bold text-black text-center mb-4">
-              SCAN REVIEW
-            </h2>
-            <p className="text-sm font-semibold font-output leading-relaxed text-orange-700 mb-4">
-              The AI scanner is a feature that automatically extracts
-              information and analyzes uploaded blood reports using artificial
-              intelligence algorithms.
-            </p>
-            <button
-              onClick={() =>
-                handleNavigation(
-                  "https://upchaar-medical-test-report.onrender.com/"
-                )
-              }
-              className="bg-blue-300 text-white font-semibold py-1 px-2 rounded-full hover:bg-blue-500 transition duration-200 flex items-center justify-center"
-            >
-              <SearchIcon className="w-4 h-4 mr-2" /> Scan your report
-            </button>
+            <div className="flex flex-col items-center text-center h-full">
+              <div className="bg-white rounded-full p-4 mb-6 shadow-medium group-hover:shadow-large transition-smooth">
+                <img
+                  src={getImageUrl("About/scan.png")}
+                  className="w-16 h-16 object-contain"
+                  alt="Medical Report Scanner"
+                />
+              </div>
+              
+              <h3 className="text-xl font-bold text-gray-800 mb-4 leading-tight">
+                Report Scanner
+                <span className="block text-sm font-medium text-blue-600 mt-1">AI-Powered Analysis</span>
+              </h3>
+              
+              <p className="text-gray-700 leading-relaxed mb-6 flex-grow">
+                Upload your medical reports and get instant AI analysis. Our system extracts key information and provides comprehensive insights.
+              </p>
+              
+              <button
+                onClick={() => {
+                  window.open("https://upchaar-medical-test-report.onrender.com/", "_blank");
+                }}
+                className="w-full bg-purple-500 hover:bg-purple-600 text-white font-semibold py-3 px-6 rounded-full transition-smooth flex items-center justify-center group-hover:shadow-lg"
+              >
+                <SearchIcon className="w-5 h-5 mr-2" />
+                Scan Report
+              </button>
+            </div>
           </motion.div>
         </div>
       </div>
 
-      {/* Trusted Section */}
-      <div className="flex justify-center items-center text-5xl  font-bold text-orange-500 py-8 max-md:text-3xl">
-        <span className="border-b-2 border-blue-500 font-bold">
-          We Are Trusted
-        </span>
-      </div>
-      {/* Review Cards Carousel */}
-      <div className="py-10">
-        <Slider {...settings} className="review-carousel">
-          <div className="w-full sm:w-[80%] md:w-[60%] lg:w-[40%] bg-white shadow-md rounded-lg p-5  mb-5">
-            <p className="text-sm text-gray-700">
-              "Awesome website! Nice Doctors, very friendly UI experience. I
-              recommend Upchaar to my friends and family."
+      {/* Testimonials Section */}
+      <div className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+              Trusted by <span className="bg-gradient-to-r from-orange-500 to-green-500 bg-clip-text text-transparent">Thousands</span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              See what our patients say about their experience with Upchaar
             </p>
-            <p className="mt-4 text-xs text-gray-600">- Geeta</p>
           </div>
-          <div className="w-full sm:w-[80%] md:w-[60%] lg:w-[40%] bg-white shadow-md rounded-lg p-5  mb-5">
-            <p className="text-sm text-gray-700">
-              "Dr. Varun is such a nice doctor to consult, he helped me cure my
-              acne and pimples in just a few months. I will visit Upchaar
-              again."
-            </p>
-            <p className="mt-4 text-xs text-gray-600">- Vaibhav</p>
+          
+          {/* Review Cards Carousel */}
+          <div className="max-w-6xl mx-auto">
+            <Slider {...settings} className="review-carousel">
+              <div className="px-4">
+                <div className="card-elevated p-8 h-full">
+                  <div className="flex items-start mb-4">
+                    <div className="flex text-yellow-400 mr-2">
+                      {[...Array(5)].map((_, i) => (
+                        <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                          <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                        </svg>
+                      ))}
+                    </div>
+                  </div>
+                  <p className="text-gray-700 leading-relaxed mb-6 text-lg">
+                    "Awesome website! Nice Doctors, very friendly UI experience. I recommend Upchaar to my friends and family."
+                  </p>
+                  <div className="flex items-center">
+                    <div className="w-12 h-12 bg-gradient-to-r from-orange-400 to-green-400 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
+                      G
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-800">Geeta</p>
+                      <p className="text-sm text-gray-600">Verified Patient</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="px-4">
+                <div className="card-elevated p-8 h-full">
+                  <div className="flex items-start mb-4">
+                    <div className="flex text-yellow-400 mr-2">
+                      {[...Array(5)].map((_, i) => (
+                        <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                          <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                        </svg>
+                      ))}
+                    </div>
+                  </div>
+                  <p className="text-gray-700 leading-relaxed mb-6 text-lg">
+                    "Dr. Varun is such a nice doctor to consult, he helped me cure my acne and pimples in just a few months. I will visit Upchaar again."
+                  </p>
+                  <div className="flex items-center">
+                    <div className="w-12 h-12 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
+                      V
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-800">Vaibhav</p>
+                      <p className="text-sm text-gray-600">Verified Patient</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="px-4">
+                <div className="card-elevated p-8 h-full">
+                  <div className="flex items-start mb-4">
+                    <div className="flex text-yellow-400 mr-2">
+                      {[...Array(5)].map((_, i) => (
+                        <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                          <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                        </svg>
+                      ))}
+                    </div>
+                  </div>
+                  <p className="text-gray-700 leading-relaxed mb-6 text-lg">
+                    "The scan review feature is very easy to use. The results are very accurate and helpful in diagnosing."
+                  </p>
+                  <div className="flex items-center">
+                    <div className="w-12 h-12 bg-gradient-to-r from-green-400 to-teal-400 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
+                      Y
+                    </div>
+                    <div>
+                      <p className="font-semibold text-gray-800">Yashi</p>
+                      <p className="text-sm text-gray-600">Verified Patient</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Slider>
           </div>
-          <div className="w-full sm:w-[80%] md:w-[60%] lg:w-[40%] bg-white shadow-md rounded-lg p-5  mb-5">
-            <p className="text-sm text-gray-700">
-              "The scan review feature is very easy to use. The results are very
-              accurate and helpful in diagnosing."
-            </p>
-            <p className="mt-4 text-xs text-gray-600">- Yashi</p>
-          </div>
-          <div className="w-full sm:w-[80%] md:w-[60%] lg:w-[40%] bg-white shadow-md rounded-lg p-5  mb-5">
-            <p className="text-sm text-gray-700">
-              "The scan review feature is very easy to use. The results are very
-              accurate and helpful in diagnosing."
-            </p>
-            <p className="mt-4 text-xs text-gray-600">- Yashi</p>
-          </div>
-        </Slider>
+        </div>
       </div>
     </>
   );
